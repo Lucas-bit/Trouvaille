@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm"></div>  
+    <div class="col-lg-12">
+    <form>
+        <p>Welcome to Trouvaille</p>
+        <div class="form-group">
+          <label for="continents">Search Region</label>
+        <select class = "form-control" id = "continents"> 
+                <option value = "" selected disabled>Select Below</option>
+                <option>Africa</option>
+                <option>America</option>
+                <option>Asia</option>
+                <option>Europe</option>
+                <option>Oceana</option>
+        </select>
+        </div>
+        <div class="form-group">
+            <label for="countries">Countries </label>
+            <select class = "form-control" id = "countries"> 
+                <!--Ajax will dynamically populate countries to select from determined by region selection -->
+
+             
+            </select>
+          </div>
+        <div class="form-group">
+            <label for="cities">Cities</label>
+            <select class = "form-control" id = "cities"> 
+                <!--Ajax will dynamically populate cities to select from determined by country selection -->
+
+             
+            </select>
+          </div>
+         
+        <button type="submit" class="btn btn-primary" id="button">Submit</button>
+        <button type="submit" class="btn btn-primary" id="clear">Clear</button>
+            </form>
+        </div>
+    <div class="col-sm"></div>
+</div>
+    <div class="row">
+        <div class="col-sm" id="results-go-here"></div>
+    </div>   
+</div>
+
