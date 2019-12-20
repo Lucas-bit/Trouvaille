@@ -1,0 +1,42 @@
+body {
+    background-color: 	#008080;
+    font-family: 'ABeeZee', sans-serif;
+
+}
+
+.header {
+    background-color: #66b2b2;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    text-align: center;
+    padding: 1%;
+    width: 90
+}
+
+.drop-down {
+    background-color:  #b2d8d8;
+    width: 90%;
+    margin-left: 7%
+    
+}
+
+.button-push {
+    margin-left: 7%; 
+}
+
+.toppers {
+    margin-left: 7%
+}
+
+.submit-clear-button{
+    background-color: #004c4c;
+    border: none;
+    
+    
+}
+
+.images {
+    background-color: purple;
+    padding: 20%;
+    
+}
