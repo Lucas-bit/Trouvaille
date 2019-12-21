@@ -6,7 +6,7 @@ body {
 
 .header {
     background-color: #66b2b2;
-    margin-top: 5%;
+
     margin-bottom: 1%;
     text-align: center;
     padding: 1%;
@@ -31,12 +31,44 @@ body {
 .submit-clear-button{
     background-color: #004c4c;
     border: none;
-    
+}
+
+
+.images {
+        margin-top: 6%;
+        border: none;
+        height: 25%;
+        width: 25%;
+
+     }
+ 
+ .logo{
+     width: 14%;
+     margin-bottom: 0%;
+ }
+ 
+ .main-container{
+    margin-left: 6%;
+}
+
+.welcome{
+    background-color: #66b2b2;
+    margin-bottom: 1%;
+    text-align: center;
+    padding: 1%;
+    width: 99;
+    font-size: 50px;
+    padding-bottom: 0%;
+    padding-left: 6%;
     
 }
 
-.images {
-    background-color: purple;
-    padding: 20%;
+.about-us{
+    margin-left: 7% 
+}
+
+.tent{
+    margin-bottom: 20px;
+    padding-bottom: 0%;
     
 }
