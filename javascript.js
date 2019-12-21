@@ -1,9 +1,7 @@
-
-
-$("#continents").on("change",function() {
+$("#continents").on("change", function () {
     $("#countries").empty()
     var selectedRegion = $("#continents").val()
-    
+
     $.ajax({
         method: "GET",
         url: "https://restcountries.eu/rest/v2/region/"+selectedRegion 
@@ -28,7 +26,7 @@ $("#continents").on("change",function() {
             })
 })
 
-$("#countries").on("change",function() {
+$("#countries").on("change", function () {
     $("#cities").empty()
     var selectedCountry = $("#countries").val()
     var settings = {
