@@ -50,5 +50,5 @@ console.log(results.data[0].name)
                     cities.push(results.data[i].name)
                     var city = $("<option>").text(cities[i])
                     $("#cities").append(city)
-                    }
-            })})
+                    
+}})})

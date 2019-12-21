@@ -15,27 +15,31 @@
 
 </head>
 <body>
-    <div class = "header">
-        <h1>Welcome to Trouvaille</h1>
-    </div>
+    <!--put logo to the right of trouvaille-->
+    <img class = "logo" src = "assets/Tent-Right.png"></img>
+    
+        <h1 class = "welcome">Welcome to Trouvaille <img class = "tent" src = "assets/Trouvaille-light-tent.png" ></h1>
 
     
-    <div class="container">
+    <div class="container main-container">
         <div class="row">
-            <div class="col-sm-3"><img class= "images" src="" alt=""></div>  
+            <img class="images" src="assets/Oceania.png">
             
     <div class="col-sm-9">
+        
     <form>
         
         <div class="form-group">
+            <p class = "about-us">Something lovely, discovered by chance. Here at Trouvaille we aspire to help you reach your travel destination by aiding you in discovering where you would like to go. Below we invite you to search your hearts desire to pinpoint your dream vacation. From all of us at Trouvaille, bon voyage! </p>
+
           <label class="toppers" for="continents">Search Region</label>
         <select class = "form-control drop-down" id = "continents"> 
                 <option value = "" selected disabled>Select Below</option>
                 <option>Africa</option>
-                <option>Americas</option>
+                <option>America</option>
                 <option>Asia</option>
                 <option>Europe</option>
-                <option>Oceania</option>
+                <option>Oceana</option>
         </select>
         </div>
         <div class="form-group">
@@ -65,8 +69,6 @@
         <div class="col-sm" id="results-go-here"></div>
     </div>   
 </div>
-
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="javascript.js"></script>
