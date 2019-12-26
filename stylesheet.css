@@ -16,7 +16,8 @@ body {
 .drop-down {
     background-color:  #b2d8d8;
     width: 90%;
-    margin-left: 7%
+    margin-left: 7%;
+    cursor: pointer;
     
 }
 
@@ -45,6 +46,7 @@ body {
  .logo{
      width: 14%;
      margin-bottom: 0%;
+     cursor: pointer; 
  }
  
  .main-container{

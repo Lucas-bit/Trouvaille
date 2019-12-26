@@ -52,3 +52,8 @@ console.log(results.data[0].name)
                     $("#cities").append(city)
                     }
             })})
+
+
+$(".logo").on("click", function(){
+    window.location.href="index.html"
+});
