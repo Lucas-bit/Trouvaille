@@ -85,7 +85,11 @@ body {
 
 .navbar{
     background-color: #66b2b2 !important;
-
+    margin-top: 40px;
+    position: fixed;
+    bottom: 0%;
+    height: 50px;
+    width: 100%
 }
 
 #logo-bottom{
@@ -96,3 +100,7 @@ body {
     border-top: solid .5px #fc6020;
 
 }
+
+
+/*-----------------------------------*/
+
