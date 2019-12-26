@@ -54,6 +54,10 @@ console.log(results.data[0].name)
             })})
 
 
-$(".logo").on("click", function(){
+$("#logo-top").on("click", function(){
+    window.location.href="index.html"
+});
+
+$("#logo-bottom").on("click", function(){
     window.location.href="index.html"
 });
