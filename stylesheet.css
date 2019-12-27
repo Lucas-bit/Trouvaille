@@ -86,7 +86,6 @@ body {
 .navbar{
     background-color: #66b2b2 !important;
     margin-top: 40px;
-    position: fixed;
     bottom: 0%;
     height: 50px;
     width: 100%
@@ -97,7 +96,7 @@ body {
     margin-bottom: 0%;
     cursor: pointer; 
     margin-left: 44%;
-    border-top: solid .5px #fc6020;
+    border-top: solid 1px #fc6020;
 
 }
 
@@ -123,23 +122,39 @@ body {
         z-index: 10; /*appears on top */
         left: 5%;
         font-size: 30px;
-        color: #fc6020;
+        color: #008080;
         opacity: .8
-
-        
     }
+
+    #prevBtn:hover {
+        color: #fc6020;
+    }
+
     #nextBtn {
         position: absolute;
         top: 50%;
         z-index: 10; /*appears on top */
         right: 5%;
         font-size: 30px;
-        color: #fc6020;
+        color: #008080;
         opacity: .8
         
+    }
+
+    #nextBtn:hover {
+        color: #fc6020;
     }
 
    .slide-photo{
     max-width:100%;
     height:auto;
+   }
+
+   .slide-welcome{
+    position: absolute;
+    top: 40%;
+    z-index: 10; /*appears on top */
+    text-align: center;
+    color: black;
+    margin-bottom: 70%;
    }
