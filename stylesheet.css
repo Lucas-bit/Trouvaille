@@ -104,3 +104,52 @@ body {
 
 /*-----------------------------------*/
 
+    .carousel-container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 1;
+        z-index: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        -webkit-transition: -webkit-transform 1600ms;
+        transition: -webkit-transform 1600ms, transform 1600ms;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+       }
+
+    .carousel-slide {
+        display: flex; /*puts images next to one another*/
+        width: 100%;
+        height: 500px;
+    }
+
+    #prevBtn {
+        position: absolute;
+        top: 50%;
+        z-index: 10; /*appears on top */
+        left: 5%;
+        font-size: 30px;
+        color: white;
+        
+    }
+    #nextBtn {
+        position: absolute;
+        top: 50%;
+        z-index: 10; /*appears on top */
+        right: 5%;
+        font-size: 30px;
+        color: white;
+        
+    }
+
+   .slide-photo{
+    max-width:100%;
+    height:auto;
+   }
