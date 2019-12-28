@@ -149,15 +149,18 @@ body {
     }
 
    .slide-photo{
+    margin-top: 10px;
     max-width:100%;
     height:auto;
    }
 
    .slide-welcome{
+    font-family: 'PT Sans', sans-serif;
     position: absolute;
-    top: 40%;
+    top: 60%;
     z-index: 10; /*appears on top */
     text-align: center;
-    color: black;
+    color: white;
     margin-bottom: 70%;
+    margin-left: 360px;
    }
