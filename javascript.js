@@ -1,3 +1,5 @@
+
+
 $("#continents").on("change", function () {
     $("#countries").empty()
     var selectedRegion = $("#continents").val()
@@ -52,3 +54,62 @@ console.log(results.data[0].name)
                     $("#cities").append(city)
                     }
             })})
+
+
+$("#logo-top").on("click", function(){
+    window.location.href="index.html"
+});
+
+$("#logo-bottom").on("click", function(){
+    window.location.href="index.html"
+});
+
+
+//---------------------------------slide-show------------------------------------------//
+
+const carouselSlide = document.querySelector(".carousel-slide");
+const carouselImages = document.querySelectorAll(".carousel-slide img");
+
+
+//buttons
+const prevBtn = document.querySelector("#prevBtn");
+const nextBtn = document.querySelector("#nextBtn");
+
+//Counter
+let counter = 1; 
+const size = carouselImages[0].clientWidth; // know how much to slide
+
+carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)"; // starts us at the first pic
+
+//Button listeners
+
+nextBtn.addEventListener("click", function () {
+    if (counter >= carouselImages.length -1 ) return; //dont do anything
+    carouselSlide.style.transition = "transform 0.4s ease-in-out"; // creates transition
+    counter ++; //adds to our counter
+    console.log(counter)
+    carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
+});
+
+
+prevBtn.addEventListener("click", function () {
+    if (counter <= 0 ) return; //dont do anything
+    carouselSlide.style.transition = "transform 0.4s ease-in-out"; // creates speed of transition
+    counter --; //takes from our counter
+    console.log(counter)
+    carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
+});
+
+carouselSlide.addEventListener("transitionend", function(){ //listens to when the slide stops moving
+    console.log(carouselImages[counter]);
+    if (carouselImages[counter].id === "lastClone"){
+        carouselSlide.style.transition = "none";
+        counter = carouselImages.length -2; 
+        carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
+    }
+    if (carouselImages[counter].id === "firstClone"){
+        carouselSlide.style.transition = "none";
+        counter = carouselImages.length - counter; 
+        carouselSlide.style.transform = "translateX(" + (-size *counter) + "px)";
+    }
+})
