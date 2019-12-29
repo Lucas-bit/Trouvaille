@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,12 @@
 <link href="https://fonts.googleapis.com/css?family=ABeeZee&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/b5c42d43b4.js" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
 <link rel = "stylesheet" href= "stylesheet.css">
 
 
@@ -42,7 +48,7 @@
     </div>
     <!--End of slide show-->
             
-    
+    <!---->
     <div class="container main-container">
         <div class="row">
             <img class="images" src="assets/Oceania.png" id="regionPic">
@@ -81,7 +87,7 @@
             </select>
           </div>
          
-        <button type="submit" class="btn btn-primary submit-clear-button button-push" id="button">Submit</button>
+        <button class="btn btn-primary submit-clear-button button-push" id="button">Submit</button>
         <button type="submit" class="btn btn-primary submit-clear-button" id="clear">Clear</button>
             </form>
         </div>
@@ -91,6 +97,18 @@
         <div class="col-sm" id="results-go-here"></div>
     </div>   
 </div>
+        <!--Weather starts here -->
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-9">
+        <div id="forecast" class="mt-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="javascript.js"></script>
 
 <nav class="navbar navbar-light bg-light footer">
     <img id = "logo-bottom" src = "assets/Tent-right-light.png" ></img>
