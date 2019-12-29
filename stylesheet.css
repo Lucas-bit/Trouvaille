@@ -88,7 +88,8 @@ body {
     margin-top: 40px;
     bottom: 0%;
     height: 50px;
-    width: 100%
+    width: 100%;
+    position: fixed;
 }
 
 #logo-bottom{
