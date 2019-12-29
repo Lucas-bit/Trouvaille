@@ -22,7 +22,7 @@ $("#continents").on("change", function () {
             console.log(countries)
             console.log(countryCodes)
            
-                
+                getImage()
 
 
             })
@@ -113,3 +113,29 @@ carouselSlide.addEventListener("transitionend", function(){ //listens to when th
         carouselSlide.style.transform = "translateX(" + (-size *counter) + "px)";
     }
 })
+function getImage(className) { 
+
+    var image = "Africa";
+    if (image === $("#continents").val()) {
+        $("#regionPic").attr("src","assets/Africa.png")
+    } 
+    var image = "Americas";
+    if (image === $("#continents").val()) {
+        $("#regionPic").attr("src","assets/Americas.png")
+    } 
+    var image = "Asia";
+    if (image === $("#continents").val()) {
+        $("#regionPic").attr("src","assets/Asia.png")
+    } 
+    var image = "Europe";
+    if (image === $("#continents").val()) {
+        $("#regionPic").attr("src","assets/Europe.png")
+    } 
+    var image = "Oceania";
+    if (image === $("#continents").val()) {
+        $("#regionPic").attr("src","assets/Oceania.png")
+    } 
+    
+   
+}
+
