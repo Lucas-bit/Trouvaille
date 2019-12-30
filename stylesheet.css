@@ -13,7 +13,7 @@ body {
     width: 90
 }
 
-.drop-down {
+.dropdown {
     background-color:  #b2d8d8;
     width: 90%;
     margin-left: 7%;
@@ -21,7 +21,7 @@ body {
     
 }
 
-.drop-down:hover {
+.dropdown:hover {
     background-color: #66b2b2;
     border: #66b2b2;    
 }
@@ -231,11 +231,8 @@ body {
   }
   
   #forecast{
-    width: 100%;
     margin-left: 8%;
   }
   
-  .forecast-box{
-    width: 100%;
-  }
+
   

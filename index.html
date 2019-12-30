@@ -62,18 +62,20 @@
             <p class = "about-us">Something lovely, discovered by chance. Here at Trouvaille we aspire to help you reach your travel destination by aiding you in discovering where you would like to go. Below we invite you to search your hearts desire to pinpoint your dream vacation. From all of us at Trouvaille, bon voyage! </p>
 
           <label class="toppers" for="continents">Search By Region</label>
-        <select class = "form-control drop-down" id = "continents"> 
+        <select class = "form-control dropdown" id = "continents"> 
+            <div class = dropdown-content>
                 <option value = "" selected disabled>Select Below</option>
                 <option>Africa</option>
                 <option>Americas</option>
                 <option>Asia</option>
                 <option>Europe</option>
                 <option>Oceania</option>
+            </div>
         </select>
         </div>
         <div class="form-group">
             <label class="toppers" for="countries">Countries </label>
-            <select class = "form-control drop-down" id = "countries"> 
+            <select class = "form-control dropdown" id = "countries"> 
                 <!--Ajax will dynamically populate countries to select from determined by region selection -->
 
              
@@ -81,7 +83,7 @@
           </div>
         <div class="form-group">
             <label class="toppers" for="cities">Cities</label>
-            <select class = "form-control drop-down" id = "cities"> 
+            <select class = "form-control dropdown" id = "cities"> 
                 <!--Ajax will dynamically populate cities to select from determined by country selection -->
 
              
