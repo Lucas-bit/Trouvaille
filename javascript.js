@@ -215,7 +215,7 @@ $(document).ready(function() {
             // only look at forecasts around 3:00pm
             if (data.list[i].dt_txt.indexOf("15:00:00") !== -1) {
               // create html elements for a bootstrap card
-              var col = $("<div>").addClass("col-md-2");
+              var col = $("<div>").addClass("col-md-2 card-margin");
               var card = $("<div>").addClass("card bg-primary text-white");
               var body = $("<div>").addClass("card-body p-2");
   

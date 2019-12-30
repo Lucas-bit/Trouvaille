@@ -221,6 +221,21 @@ body {
 .card{
     background-color: #b2d8d8 !important;
     border-radius: 15px;
+    box-shadow: 5px 5px 5px black;
+
 }
 
-
+.container-fluid{
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  #forecast{
+    width: 100%;
+    margin-left: 8%;
+  }
+  
+  .forecast-box{
+    width: 100%;
+  }
+  
