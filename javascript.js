@@ -208,7 +208,8 @@ $(document).ready(function() {
         dataType: "json",
         success: function(data) {
           // overwrite any existing content with title and empty row
-          $("#forecast").html("<h4 class=\"mt-3\">5-Day Forecast:</h4>").append("<div class=\"row\">");
+          $("#forecast").html("<h4 class=\"mt-3\">5-Day Forecast: "+ data.city.name +"</h4>").append("<div class=\"row\">") 
+          console.log(data)
   
           // loop over all forecasts (by 3-hour increments)
           for (var i = 0; i < data.list.length; i++) {
@@ -263,9 +264,9 @@ $(document).ready(function() {
     // get current history, if any
     var history = JSON.parse(window.localStorage.getItem("history")) || [];
   
-    if (history.length > 0) {
-      searchWeather(history[history.length-1]);
-    }
+    // if (history.length > 0) {
+    //   searchWeather(history[history.length-1]);
+    // }
   
     for (var i = 0; i < history.length; i++) {
       makeRow(history[i]);

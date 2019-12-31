@@ -112,6 +112,7 @@ body {
     font-size: 50px;
     padding-bottom: 0%;
     padding-left: 5.5%;
+    font-family: 'Kaushan Script', cursive;
     
 }
 
@@ -198,7 +199,7 @@ body {
    }
 
    .slide-welcome{
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Kaushan Script', cursive;
     position: absolute;
     top: 60%;
     z-index: 10; /*appears on top */
