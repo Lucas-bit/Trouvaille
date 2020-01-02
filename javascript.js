@@ -76,10 +76,17 @@ $("#cities").on("change", function() {
         url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lon+"&radius=2000&type=restaurant&key="+googleKey,
     }).then(function(response) {
             console.log(response)
-
+        
+        for(var i=0;i<5;i++) {
            var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
-        }
-    
-    
+           var newDiv = $("<div>")
+           var img = $("<img>").attr("src",photoURL)
+           var title = $("<p>").text(response.results[i].name)
+           var rating = $("<p>").text("Rating: "+response.results[i].rating+" Number of ratings: "+response.results[i].user_ratings_total)
+           var vicinity = $("<p>").text("Vicinity: "+response.results[i].vicinity)
+           
+           newDiv.append(img,title,rating,vicinity)
+           $("#results-go-here").append(newDiv)
+        }}
     )})
 
