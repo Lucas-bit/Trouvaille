@@ -297,51 +297,38 @@ $("#button").on("click", function() {
   }).then(function(response) {
           console.log(response)
       
-          $("#results-go-here").html("<h4 class=\"resturant-title\">Resturants: " ,"</h4>")
+          $("#restaurant").html("<h4 class=\"resturant-title\">Restaurants: " ,"</h4>")
 
 
       for(var i=0;i<5;i++) {
          var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
-         var newDiv = $("<div>").addClass("resturant-divs")
-         var img = $("<img>").attr("src",photoURL).addClass("resturant-photos")
-         var title = $("<p>").text(response.results[i].name).addClass("resturant-name")
-         var rating = $("<p>").text("Rating: "+response.results[i].rating+" Number of ratings: "+response.results[i].user_ratings_total).addClass("resturant-rating")
-         var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("resturant-area")
+         var newDiv = $("<div>").addClass("restaurant-divs")
+         var img = $("<img>").attr("src",photoURL).addClass("restaurant-photos")
+         var title = $("<p>").text(response.results[i].name).addClass("restaurant-name")
+         var rating = $("<p>").text("Rating: "+response.results[i].rating+" Number of ratings: "+response.results[i].user_ratings_total).addClass("restaurant-rating")
+         var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("restaurant-area")
          
          newDiv.append(img,title,rating,area)
 
-         $("#results-go-here").append(newDiv)
-      }}
-  )
+         $("#restaurant").append(newDiv)
+      }
 
-
-
-$("#button").on("click", function() {
-    var googleKey = "AIzaSyA2-3Fi1nZ7Ep570B8W28x4lmGxY5UqRlc"
-    var selectedCity = $("#cities").val()
-    for(var i=0;i<cities.length;i++) {
-        if (selectedCity===cities[i].name) {
-            var lat = cities[i].lat
-            var lon = cities[i].lon
-        }
-    }$.ajax({
-    method: "GET",
-    crossOrigin: true,
-    url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lon+"&radius=2000&type=tourist_attraction&key="+googleKey,
-}).then(function(response) {
-        console.log(response)
-    
-    for(var i=0;i<5;i++) {
-       var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
-       var newDiv = $("<div>").addClass("resturant-divs")
-       var img = $("<img>").attr("src",photoURL)
-       var title = $("<p>").text(response.results[i].name)
-       var rating = $("<p>").text("Rating: "+response.results[i].rating+" Number of ratings: "+response.results[i].user_ratings_total)
-       var vicinity = $("<p>").text("Vicinity: "+response.results[i].vicinity)
-       
-       newDiv.append(img,title,rating,vicinity)
-       $("#results-go-here").append(newDiv)
-    }}
-)})})
-
+      $.ajax({
+        method: "GET",
+        crossOrigin: true,
+        url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lon+"&radius=2000&type=tourist_attraction&key="+googleKey,
+    }).then(function(response) {
+            console.log(response)
+            $("#pointsOfInterest").html("<h4 class=\"points-of-int\">Points Of Interest: " ,"</h4>")
+        for(var i=0;i<5;i++) {
+           var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
+           var newDiv = $("<div>").addClass("points-of-int-divs")
+           var img = $("<img>").attr("src",photoURL).addClass("points-of-int-photos")
+           var title = $("<p>").text(response.results[i].name).addClass("points-of-int-name")
+           var rating = $("<p>").text("Rating: "+response.results[i].rating+" Number of ratings: "+response.results[i].user_ratings_total).addClass("points-of-int-rating")
+           var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("points-of-int-area")
+           
+           newDiv.append(img,title,rating,area)
+           $("#pointsOfInterest").append(newDiv)
+        }})})})
 

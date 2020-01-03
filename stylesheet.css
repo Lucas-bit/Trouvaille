@@ -239,17 +239,20 @@ body {
 
 /* ----------------Resturant----------------------*/
 
-#results-go-here{
+#restaurant, #pointsOfInterest{
     overflow: auto;
     height: 500px;
     margin-left: 8%;
     margin-top: 20px;
   }
-  .resturant-photos{
+  .restaurant-photos, .points-of-int-photos{
   border-radius: 10px;
   box-shadow: 5px 5px 5px black;
   margin-bottom: 20px;
   }
   
+  #pointsOfInterest {
+    margin-right: 20px;
+}
   
   
