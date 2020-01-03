@@ -13,7 +13,7 @@ body {
     width: 90
 }
 
-.drop-down {
+.dropdown {
     background-color:  #b2d8d8;
     width: 90%;
     margin-left: 7%;
@@ -21,7 +21,7 @@ body {
     
 }
 
-.drop-down:hover {
+.dropdown:hover {
     background-color: #66b2b2;
     border: #66b2b2;    
 }
@@ -42,6 +42,49 @@ body {
 .submit-clear-button:hover{
     background-color: #fc6020;
 }
+
+.submit-clear-button:active:hover{
+    background-color: #fc6020 !important;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    
+}
+.submit-clear-button:focus{
+    background-color: #66b2b2;
+}
+
+.submit-clear-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    color: white;
+
+  }
+  
+  .submit-clear-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    color: white;
+  }
+  
+  .submit-clear-button:hover span {
+    padding-right: 25px;
+    color: white;
+  }
+  
+  .submit-clear-button:hover span:after {
+    opacity: 1;
+    right: 0;
+    color: white;
+
+  }
+
+
 
 .images {
         margin-top: 6%;
@@ -70,6 +113,7 @@ body {
     font-size: 50px;
     padding-bottom: 0%;
     padding-left: 5.5%;
+    font-family: 'Kaushan Script', cursive;
     
 }
 
@@ -102,7 +146,7 @@ body {
 }
 
 
-/*-----------------------------------*/
+/*-------------SlideShow----------------------*/
 
     .carousel-container {
         width: 100%;
@@ -156,7 +200,7 @@ body {
    }
 
    .slide-welcome{
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Kaushan Script', cursive;
     position: absolute;
     top: 60%;
     z-index: 10; /*appears on top */
@@ -165,3 +209,42 @@ body {
     margin-bottom: 70%;
     margin-left: 360px;
    }
+
+   /*---------------------weather--------------------------*/
+   
+  
+   .card-body{
+    background-color: #b2d8d8;
+    color: black;
+    border-radius: 15px;
+    background-color: 008080
+}
+
+.card{
+    background-color: #b2d8d8 !important;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px black;
+
+}
+
+.container-fluid{
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  #forecast{
+    margin-left: 8%;
+  }
+  
+
+ /*---------------------preloader--------------------------*/
+
+ .spinner-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ff6347;
+    z-index: 999999;
+    }
