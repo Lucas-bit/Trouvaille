@@ -55,9 +55,6 @@ console.log(results.data[0].name)
                       
                       var city = $("<option>").text(cities[i].name)
                       $("#cities").append(city)
-  
-                      
-                      
   }
             })})
 
@@ -300,15 +297,19 @@ $("#button").on("click", function() {
   }).then(function(response) {
           console.log(response)
       
+          $("#results-go-here").html("<h4 class=\"resturant-title\">Resturants: " ,"</h4>")
+
+
       for(var i=0;i<5;i++) {
          var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
          var newDiv = $("<div>").addClass("resturant-divs")
-         var img = $("<img>").attr("src",photoURL)
-         var title = $("<p>").text(response.results[i].name)
-         var rating = $("<p>").text("Rating: "+response.results[i].rating+" Number of ratings: "+response.results[i].user_ratings_total)
-         var vicinity = $("<p>").text("Vicinity: "+response.results[i].vicinity)
+         var img = $("<img>").attr("src",photoURL).addClass("resturant-photos")
+         var title = $("<p>").text(response.results[i].name).addClass("resturant-name")
+         var rating = $("<p>").text("Rating: "+response.results[i].rating+" Number of ratings: "+response.results[i].user_ratings_total).addClass("resturant-rating")
+         var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("resturant-area")
          
-         newDiv.append(img,title,rating,vicinity)
+         newDiv.append(img,title,rating,area)
+
          $("#results-go-here").append(newDiv)
       }}
   )})
