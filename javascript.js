@@ -2,6 +2,7 @@ var cities = []
 
 $("#continents").on("change", function () {
     $("#countries").empty()
+    $("#cities").empty()
     var selectedRegion = $("#continents").val()
 
     $.ajax({
@@ -30,6 +31,7 @@ $("#continents").on("change", function () {
 
 $("#countries").on("change", function () {
     $("#cities").empty()
+    cities = []
     var selectedCountry = $("#countries").val()
     var settings = {
         "async": true,
@@ -61,6 +63,7 @@ console.log(results.data[0].name)
 
 
 $("#cities").on("change", function() {
+
     var googleKey = "AIzaSyA2-3Fi1nZ7Ep570B8W28x4lmGxY5UqRlc"
     var selectedCity = $("#cities").val()
 
