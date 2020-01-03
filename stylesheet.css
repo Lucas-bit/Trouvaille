@@ -133,7 +133,7 @@ body {
     bottom: 0%;
     height: 50px;
     width: 100%;
-    position: fixed;
+    position: sticky;
 }
 
 #logo-bottom{
@@ -237,4 +237,19 @@ body {
   }
   
 
+/* ----------------Resturant----------------------*/
+
+#results-go-here{
+    overflow: auto;
+    height: 500px;
+    margin-left: 8%;
+    margin-top: 20px;
+  }
+  .resturant-photos{
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+  margin-bottom: 20px;
+  }
+  
+  
   
