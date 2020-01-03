@@ -26,9 +26,8 @@
 </head>
 <body>
 
-        <div class="spinner-wrapper">
-                <div class="spinner"></div>
-                </div>
+    <!--Preloader-->
+     <div class="loader_bg"><div class="loader"></div></div>
                  
 
     <!--put logo to the right of trouvaille-->
@@ -67,7 +66,7 @@
     <form>
         
         <div class="form-group">
-            <p class = "about-us">Something lovely, discovered by chance. Here at Trouvaille we aspire to help you reach your travel destination by aiding you in discovering where you would like to go. Below we invite you to search your hearts desire to pinpoint your dream vacation. From all of us at Trouvaille, bon voyage! </p>
+            <p class = "about-us"> Something lovely, discovered by chance. Here at Trouvaille we aspire to help you reach your travel destination by aiding you in discovering where you would like to go. Below we invite you to search your hearts desire to pinpoint your dream vacation. From all of us at Trouvaille, bon voyage! </p>
 
           <label class="toppers" for="continents">Search By Region</label>
         <select class = "form-control dropdown" id = "continents"> 
@@ -133,16 +132,17 @@
 <script type="text/javascript" src="js/jquery.ajax-cross-origin.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="javascript.js"></script>
+<!--Preloader-->
 <script>
-        $(document).ready(function() {
-        //Preloader
-        preloaderFadeOutTime = 500;
-        function hidePreloader() {
-        var preloader = $('.spinner-wrapper');
-        preloader.fadeOut(preloaderFadeOutTime);
-        }
-        hidePreloader();
-        });
-        </script>
+$(document).ready(function() {
+//Preloader
+preloaderFadeOutTime = 3000;
+function hidePreloader() {
+var preloader = $(".loader_bg");
+preloader.fadeOut(preloaderFadeOutTime);
+}
+hidePreloader();
+});
+</script>
 </body>
 </html>
