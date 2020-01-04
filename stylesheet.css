@@ -85,6 +85,7 @@ body {
   }
 
 
+
 .images {
         margin-top: 6%;
         border: none;
@@ -132,7 +133,7 @@ body {
     bottom: 0%;
     height: 50px;
     width: 100%;
-    position: fixed;
+    position: sticky;
 }
 
 #logo-bottom{
@@ -236,4 +237,22 @@ body {
   }
   
 
+/* ----------------Resturant----------------------*/
+
+#restaurant, #pointsOfInterest{
+    overflow: auto;
+    height: 500px;
+    margin-left: 8%;
+    margin-top: 20px;
+  }
+  .restaurant-photos, .points-of-int-photos{
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+  margin-bottom: 20px;
+  }
+  
+  #pointsOfInterest {
+      margin-right: 20px;
+  }
+  
   
