@@ -1,8 +1,12 @@
 var cities = []
+var countries = []
 
 $("#continents").on("change", function () {
     $("#countries").empty()
     $("#cities").empty()
+    cities = []
+    countries = []
+
     var selectedRegion = $("#continents").val()
 
     $.ajax({
