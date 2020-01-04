@@ -28,32 +28,46 @@ $("#continents").on("change", function () {
             })
 })
 
+
+
 $("#countries").on("change", function () {
     $("#cities").empty()
     var selectedCountry = $("#countries").val()
+    var minPop = 350000
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=10&countryIds="+selectedCountry+"&minPopulation=350000&types=city",
+        "url": "https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=10&countryIds="+selectedCountry+"&minPopulation="+minPop+"&types=city",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
             "x-rapidapi-key": "555cfff31emsh4fcda8a56074d60p149193jsn1ba035293d50"
         }
     }
-    
-    $.ajax(settings).then(function (response) {
-        console.log(response);
-                var results = response
-//dropdown for cities
-console.log(results.data[0].name)
-                var cities = []
-            for (var i = 0;i<10;i++) {
-                    cities.push(results.data[i].name)
-                    var city = $("<option>").text(cities[i])
-                    $("#cities").append(city)
-                    }
-            })})
+    function ajaxCities() {
+      console.log(settings.url)
+      $.ajax(settings).then(function (response) {
+      console.log(response);
+              var results = response
+              if (results.data.length > 0) {
+    //dropdown for cities
+    console.log(results.data[0].name)
+                    var cities = []
+                for (var i = 0;i<10;i++) {
+                        cities.push(results.data[i].name)
+                        var city = $("<option>").text(cities[i])
+                        $("#cities").append(city)
+                        clearInterval(countriesInterval)
+                }} else {
+                  minPop-=86250
+                  settings.url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=10&countryIds="+selectedCountry+"&minPopulation="+minPop+"&types=city"
+                }
+              })}
+    var countriesInterval = setInterval(ajaxCities,1000)
+              ajaxCities()
+
+  })
+
 
 
 $("#logo-top").on("click", function(){
