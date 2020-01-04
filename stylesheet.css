@@ -326,3 +326,7 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background:  #fc6020; 
   }
+
+  .results{
+    width: 100%
+  }
