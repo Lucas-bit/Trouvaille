@@ -58,18 +58,16 @@ $("#countries").on("change", function () {
               "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
               "x-rapidapi-key": "555cfff31emsh4fcda8a56074d60p149193jsn1ba035293d50"
 }}
-      function ajaxCities() {
-        console.log(settings.url)
+
+function ajaxCities() {
         $.ajax(settings).then(function (response) {
-        console.log(response);
                 var results = response
+
                 if (results.data.length > 0) {
       //dropdown for cities
-      console.log(results.data[0].name)
-                      var cities = []
                   for (var i = 0;i<10;i++) {
-                          cities.push(results.data[i].name)
-                          var city = $("<option>").text(cities[i])
+                    cities.push({name:results.data[i].name,lat:results.data[i].latitude,lon:results.data[i].longitude})
+                          var city = $("<option>").text(cities[i].name)
                           $("#cities").append(city)
                           clearInterval(countriesInterval)
                   }} else {
@@ -79,7 +77,7 @@ $("#countries").on("change", function () {
                 })}
       var countriesInterval = setInterval(ajaxCities,1000)
                 ajaxCities()
-  
+  console.log(cities)
     })
 
 
@@ -312,15 +310,18 @@ $("#button").on("click", function() {
       if (selectedCity===cities[i].name) {
           var lat = cities[i].lat
           var lon = cities[i].lon
-      }
-  }
+      }}
+  
   $.ajax({
       method: "GET",
       crossOrigin: true,
       url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lon+"&radius=2000&type=restaurant&key="+googleKey,
   }).then(function(response) {
           console.log(response)
-      
+          console.log("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lon+"&radius=2000&type=restaurant&key="+googleKey)
+  console.log(cities)        
+          console.log(lat)
+        console.log(lon)
           $("#restaurant").html("<h4 class=\"resturant-title\">Restaurants: " ,"</h4>")
 
 
@@ -335,7 +336,7 @@ $("#button").on("click", function() {
          newDiv.append(img,title,rating,area)
 
          $("#restaurant").append(newDiv)
-      }
+      }})
 
       $.ajax({
         method: "GET",
@@ -354,5 +355,6 @@ $("#button").on("click", function() {
            
            newDiv.append(img,title,rating,area)
            $("#pointsOfInterest").append(newDiv)
-        }})})})
+        }})})
+      
 
