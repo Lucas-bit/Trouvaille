@@ -59,7 +59,7 @@ $("#countries").on("change", function () {
               "x-rapidapi-key": "555cfff31emsh4fcda8a56074d60p149193jsn1ba035293d50"
 }}
 
-function ajaxCities() {
+var countriesInterval = setInterval(function() {
         $.ajax(settings).then(function (response) {
                 var results = response
                 if (results.data.length > 0) {
@@ -73,10 +73,9 @@ function ajaxCities() {
                     minPop-=86250
                     settings.url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=10&countryIds="+selectedCountry+"&minPopulation="+minPop+"&types=city"
                   }
-                })}
-      var countriesInterval = setInterval(ajaxCities,1000)
-                ajaxCities()
-  console.log(cities)
+                })},1000)
+      
+                
     })
 
 
