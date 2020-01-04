@@ -1,3 +1,14 @@
+$(document).ready(function() {
+  //Preloader
+  preloaderFadeOutTime = 3000;
+  function hidePreloader() {
+  var preloader = $(".loader_bg");
+  preloader.fadeOut(preloaderFadeOutTime);
+  }
+  hidePreloader();
+  })
+
+
 var cities = []
 var countries = []
 
