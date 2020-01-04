@@ -45,33 +45,38 @@ $("#continents").on("change", function () {
 })
 
 $("#countries").on("change", function () {
-    $("#cities").empty()
+  $("#cities").empty()
     cities = []
-    var selectedCountry = $("#countries").val()
-    var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=10&countryIds="+selectedCountry+"&minPopulation=350000&types=city",
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
-            "x-rapidapi-key": "555cfff31emsh4fcda8a56074d60p149193jsn1ba035293d50"
-        }
-    }
-    
-    $.ajax(settings).then(function (response) {
-        console.log(response);
-                var results = response
-//dropdown for cities
-console.log(results.data[0].name)
+      var selectedCountry = $("#countries").val()
+      var minPop = 350000
+      var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=10&countryIds="+selectedCountry+"&minPopulation="+minPop+"&types=city",
+          "method": "GET",
+          "headers": {
+              "x-rapidapi-host": "wft-geo-db.p.rapidapi.com",
+              "x-rapidapi-key": "555cfff31emsh4fcda8a56074d60p149193jsn1ba035293d50"
+}}
 
-                    for (var i = 0;i<10;i++) {
-                      cities.push({name:results.data[i].name,lat:results.data[i].latitude,lon:results.data[i].longitude})
-                      
-                      var city = $("<option>").text(cities[i].name)
-                      $("#cities").append(city)
-  }
-            })})
+var countriesInterval = setInterval(function() {
+        $.ajax(settings).then(function (response) {
+                var results = response
+                if (results.data.length > 0) {
+      //dropdown for cities
+                  for (var i = 0;i<10;i++) {
+                    cities.push({name:results.data[i].name,lat:results.data[i].latitude,lon:results.data[i].longitude})
+                          var city = $("<option>").text(cities[i].name)
+                          $("#cities").append(city)
+                          clearInterval(countriesInterval)
+                  }} else {
+                    minPop-=86250
+                    settings.url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=10&countryIds="+selectedCountry+"&minPopulation="+minPop+"&types=city"
+                  }
+                })},1000)
+      
+                
+    })
 
 
 $("#logo-top").on("click", function(){
@@ -291,51 +296,41 @@ $(document).ready(function() {
     }
   });
   
-                
-           
 
-
-
+//get restaurants and tourist attractions
 $("#button").on("click", function() {
   var googleKey = "AIzaSyA2-3Fi1nZ7Ep570B8W28x4lmGxY5UqRlc"
   var selectedCity = $("#cities").val()
-  for(var i=0;i<cities.length;i++) {
-      if (selectedCity===cities[i].name) {
+    for(var i=0;i<cities.length;i++){
+      if (selectedCity===cities[i].name){
           var lat = cities[i].lat
           var lon = cities[i].lon
-      }
-  }
+}}
+  
   $.ajax({
-      method: "GET",
-      crossOrigin: true,
-      url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lon+"&radius=2000&type=restaurant&key="+googleKey,
+    method: "GET",
+    crossOrigin: true,
+    url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lon+"&radius=2000&type=restaurant&key="+googleKey,
   }).then(function(response) {
-          console.log(response)
-      
-          $("#restaurant").html("<h4 class=\"resturant-title\">Restaurants: " ,"</h4>")
-
-
-      for(var i=0;i<5;i++) {
-         var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
-         var newDiv = $("<div>").addClass("restaurant-divs")
-         var img = $("<img>").attr("src",photoURL).addClass("restaurant-photos")
-         var title = $("<p>").text(response.results[i].name).addClass("restaurant-name")
-         var rating = $("<p>").text("Rating: "+response.results[i].rating+" Number of ratings: "+response.results[i].user_ratings_total).addClass("restaurant-rating")
-         var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("restaurant-area")
-         
-         newDiv.append(img,title,rating,area)
-
-         $("#restaurant").append(newDiv)
-      }
-
-      $.ajax({
-        method: "GET",
-        crossOrigin: true,
-        url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lon+"&radius=2000&type=tourist_attraction&key="+googleKey,
-    }).then(function(response) {
-            console.log(response)
-            $("#pointsOfInterest").html("<h4 class=\"points-of-int\">Points Of Interest: " ,"</h4>")
+      $("#restaurant").html("<h4 class=\"resturant-title\">Restaurants: " ,"</h4>")
         for(var i=0;i<5;i++) {
+          var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
+          var newDiv = $("<div>").addClass("restaurant-divs")
+          var img = $("<img>").attr("src",photoURL).addClass("restaurant-photos")
+          var title = $("<p>").text(response.results[i].name).addClass("restaurant-name")
+          var rating = $("<p>").text("Rating: "+response.results[i].rating+" Number of ratings: "+response.results[i].user_ratings_total).addClass("restaurant-rating")
+          var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("restaurant-area")
+          newDiv.append(img,title,rating,area)
+          $("#restaurant").append(newDiv)
+}})
+
+  $.ajax({
+    method: "GET",
+    crossOrigin: true,
+    url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lon+"&radius=2000&type=tourist_attraction&key="+googleKey,
+  }).then(function(response){
+      $("#pointsOfInterest").html("<h4 class=\"points-of-int\">Points Of Interest: " ,"</h4>")
+        for(var i=0;i<5;i++){
            var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
            var newDiv = $("<div>").addClass("points-of-int-divs")
            var img = $("<img>").attr("src",photoURL).addClass("points-of-int-photos")
@@ -345,7 +340,8 @@ $("#button").on("click", function() {
            
            newDiv.append(img,title,rating,area)
            $("#pointsOfInterest").append(newDiv)
-        }})})})
+}})})
+      
 
         
 
