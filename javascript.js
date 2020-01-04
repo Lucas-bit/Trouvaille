@@ -347,3 +347,5 @@ $("#button").on("click", function() {
            $("#pointsOfInterest").append(newDiv)
         }})})})
 
+        
+
