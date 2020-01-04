@@ -45,13 +45,11 @@ $("#countries").on("change", function () {
         }
     }
     function ajaxCities() {
-      console.log(settings.url)
+      
       $.ajax(settings).then(function (response) {
-      console.log(response);
               var results = response
               if (results.data.length > 0) {
     //dropdown for cities
-    console.log(results.data[0].name)
                     var cities = []
                 for (var i = 0;i<10;i++) {
                         cities.push(results.data[i].name)
@@ -63,7 +61,7 @@ $("#countries").on("change", function () {
                   settings.url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=10&countryIds="+selectedCountry+"&minPopulation="+minPop+"&types=city"
                 }
               })}
-    var countriesInterval = setInterval(ajaxCities,1000)
+    var countriesInterval = setInterval(ajaxCities,1100)
               ajaxCities()
 
   })
