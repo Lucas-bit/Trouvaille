@@ -251,7 +251,6 @@ body {
       overflow: auto;
       height: 500px;
       margin-left: 11%;
-      ;
       border-radius: 15px;
       
   
@@ -260,6 +259,8 @@ body {
     border-radius: 10px;
     box-shadow: 5px 5px 5px black;
     margin-bottom: 20px;
+    margin-top: 20px;
+
     }
     
     #pointsOfInterest {
