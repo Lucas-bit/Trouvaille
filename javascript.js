@@ -173,6 +173,7 @@ $(document).ready(function() {
     
   
       getForecast(searchValue);
+
     });
   
     $(".history").on("click", "li", function() {
@@ -298,6 +299,7 @@ $(document).ready(function() {
   
 
 //get restaurants and tourist attractions
+
 $("#button").on("click", function() {
   var googleKey = "AIzaSyA2-3Fi1nZ7Ep570B8W28x4lmGxY5UqRlc"
   var selectedCity = $("#cities").val()
@@ -312,7 +314,8 @@ $("#button").on("click", function() {
     crossOrigin: true,
     url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lon+"&radius=2000&type=restaurant&key="+googleKey,
   }).then(function(response) {
-      $("#restaurant").html("<h4 class=\"resturant-title\">Restaurants: " ,"</h4>")
+      $("#restaurant-title").html("<h4 class=\"resturant-title\">Restaurants: " ,"</h4>")
+      $("#restaurant")
         for(var i=0;i<5;i++) {
           var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
           var newDiv = $("<div>").addClass("restaurant-divs")
@@ -329,7 +332,8 @@ $("#button").on("click", function() {
     crossOrigin: true,
     url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lon+"&radius=2000&type=tourist_attraction&key="+googleKey,
   }).then(function(response){
-      $("#pointsOfInterest").html("<h4 class=\"points-of-int\">Points Of Interest: " ,"</h4>")
+      $("#pointsOfInterestTitle").html("<h4 class=\"points-of-int\">Points of Interest: " ,"</h4>")
+      $("#pointsOfInterest")
         for(var i=0;i<5;i++){
            var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
            var newDiv = $("<div>").addClass("points-of-int-divs")
@@ -341,5 +345,3 @@ $("#button").on("click", function() {
            newDiv.append(img,title,rating,area)
            $("#pointsOfInterest").append(newDiv)
 }})})
-      
-
