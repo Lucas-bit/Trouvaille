@@ -315,7 +315,7 @@ $("#button").on("click", function() {
     url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lon+"&radius=2000&type=restaurant&key="+googleKey,
   }).then(function(response) {
       $("#restaurant-title").html("<h4 class=\"resturant-title\">Restaurants: " ,"</h4>")
-      $("#restaurant")
+      $("#restaurant").css({"background-color":"#b2d8d8"}).css({"box-shadow": "5px 5px 5px black"})
         for(var i=0;i<5;i++) {
           var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
           var newDiv = $("<div>").addClass("restaurant-divs")
@@ -333,7 +333,7 @@ $("#button").on("click", function() {
     url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lon+"&radius=2000&type=tourist_attraction&key="+googleKey,
   }).then(function(response){
       $("#pointsOfInterestTitle").html("<h4 class=\"points-of-int\">Points of Interest: " ,"</h4>")
-      $("#pointsOfInterest")
+      $("#pointsOfInterest").css({"background-color":"#b2d8d8"}).css({"box-shadow": "5px 5px 5px black"})
         for(var i=0;i<5;i++){
            var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
            var newDiv = $("<div>").addClass("points-of-int-divs")
