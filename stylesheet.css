@@ -259,8 +259,6 @@ body {
     border-radius: 10px;
     box-shadow: 5px 5px 5px black;
     margin-bottom: 20px;
-    margin-top: 20px;
-
     }
     
     #pointsOfInterest {
@@ -279,6 +277,24 @@ body {
     .title-row {
         width: 90%
     }
+
+    .restaurant-name {
+        margin-top: 20px;
+      }
+  
+      .points-of-int-name {
+        margin-top: 20px;
+      }
+
+      .points-of-int-area {
+        padding-bottom: 20px;
+       
+      }
+
+      .restaurant-area{ 
+      padding-bottom: 20px;
+      }
+      
    /*---------------------preloader--------------------------*/
 
    .loader_bg {

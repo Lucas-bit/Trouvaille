@@ -322,8 +322,8 @@ $("#button").on("click", function() {
           var img = $("<img>").attr("src",photoURL).addClass("restaurant-photos")
           var title = $("<p>").text(response.results[i].name).addClass("restaurant-name")
           var rating = $("<p>").text("Rating: "+response.results[i].rating+" Number of ratings: "+response.results[i].user_ratings_total).addClass("restaurant-rating")
-          var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("restaurant-area")
-          newDiv.append(img,title,rating,area)
+          var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("restaurant-area").css({"border-bottom" : "2px solid #fc6020"})
+          newDiv.append(title,img,rating,area)
           $("#restaurant").append(newDiv)
 }})
 
@@ -339,9 +339,9 @@ $("#button").on("click", function() {
            var newDiv = $("<div>").addClass("points-of-int-divs")
            var img = $("<img>").attr("src",photoURL).addClass("points-of-int-photos")
            var title = $("<p>").text(response.results[i].name).addClass("points-of-int-name")
-           var rating = $("<p>").text("Rating: "+response.results[i].rating+" Number of ratings: "+response.results[i].user_ratings_total).addClass("points-of-int-rating")
-           var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("points-of-int-area")
+           var rating = $("<p>").text("Rating: "+response.results[i].rating + " Number of ratings: "+response.results[i].user_ratings_total).addClass("points-of-int-rating")
+           var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("points-of-int-area").css({"border-bottom" : "2px solid #fc6020"})
            
-           newDiv.append(img,title,rating,area)
+           newDiv.append(title,img,rating,area)
            $("#pointsOfInterest").append(newDiv)
 }})})
