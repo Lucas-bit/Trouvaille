@@ -322,7 +322,7 @@ $("#button").on("click", function() {
           var newDiv = $("<div>").addClass("restaurant-divs")
           var img = $("<img>").attr("src",photoURL).addClass("restaurant-photos")
           var title = $("<p>").text(response.results[i].name).addClass("restaurant-name")
-          var rating = $("<p>").text("Rating: "+response.results[i].rating+  " Number of ratings: "+response.results[i].user_ratings_total).addClass("restaurant-rating")
+          var rating = $("<p>").html("Rating: "+response.results[i].rating+ "&#11088; Number of ratings: "+response.results[i].user_ratings_total).addClass("restaurant-rating")
           var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("restaurant-area").css({"border-bottom" : "2px solid #fc6020"})
           newDiv.append(title,img,rating,area)
           $("#restaurant").append(newDiv)
@@ -341,7 +341,7 @@ $("#button").on("click", function() {
            var newDiv = $("<div>").addClass("points-of-int-divs")
            var img = $("<img>").attr("src",photoURL).addClass("points-of-int-photos")
            var title = $("<p>").text(response.results[i].name).addClass("points-of-int-name")
-           var rating = $("<p>").html("Rating: "+response.results[i].rating + "&#9824; Number of ratings: "+response.results[i].user_ratings_total).addClass("points-of-int-rating")
+           var rating = $("<p>").html("Rating: "+response.results[i].rating + "&#11088; Number of ratings: "+response.results[i].user_ratings_total).addClass("points-of-int-rating")
            var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("points-of-int-area").css({"border-bottom" : "2px solid #fc6020"})
            
            newDiv.append(title,img,rating,area)
