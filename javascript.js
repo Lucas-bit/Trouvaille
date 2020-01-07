@@ -173,6 +173,7 @@ $(document).ready(function() {
     
   
       getForecast(searchValue);
+
     });
   
     $(".history").on("click", "li", function() {
@@ -298,6 +299,7 @@ $(document).ready(function() {
   
 
 //get restaurants and tourist attractions
+
 $("#button").on("click", function() {
   var googleKey = "AIzaSyA2-3Fi1nZ7Ep570B8W28x4lmGxY5UqRlc"
   var selectedCity = $("#cities").val()
@@ -312,15 +314,17 @@ $("#button").on("click", function() {
     crossOrigin: true,
     url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lon+"&radius=2000&type=restaurant&key="+googleKey,
   }).then(function(response) {
-      $("#restaurant").html("<h4 class=\"resturant-title\">Restaurants: " ,"</h4>")
+      $("#restaurant-title").html("<h4 class=\"resturant-title\">Restaurants: " ,"</h4>")
+      $("#restaurant").css({"background-color":"#b2d8d8"}).css({"box-shadow": "5px 5px 5px black"})
+      $("#restaurant").html("")
         for(var i=0;i<5;i++) {
           var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
           var newDiv = $("<div>").addClass("restaurant-divs")
           var img = $("<img>").attr("src",photoURL).addClass("restaurant-photos")
           var title = $("<p>").text(response.results[i].name).addClass("restaurant-name")
-          var rating = $("<p>").text("Rating: "+response.results[i].rating+" Number of ratings: "+response.results[i].user_ratings_total).addClass("restaurant-rating")
-          var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("restaurant-area")
-          newDiv.append(img,title,rating,area)
+          var rating = $("<p>").html("Rating: "+response.results[i].rating+ "&#11088; Number of ratings: "+response.results[i].user_ratings_total).addClass("restaurant-rating")
+          var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("restaurant-area").css({"border-bottom" : "2px solid #fc6020"})
+          newDiv.append(title,img,rating,area)
           $("#restaurant").append(newDiv)
 }})
 
@@ -329,19 +333,17 @@ $("#button").on("click", function() {
     crossOrigin: true,
     url: "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+lat+","+lon+"&radius=2000&type=tourist_attraction&key="+googleKey,
   }).then(function(response){
-      $("#pointsOfInterest").html("<h4 class=\"points-of-int\">Points Of Interest: " ,"</h4>")
+      $("#pointsOfInterestTitle").html("<h4 class=\"points-of-int\">Points of Interest: " ,"</h4>")
+      $("#pointsOfInterest").css({"background-color":"#b2d8d8"}).css({"box-shadow": "5px 5px 5px black"})
+      $("#pointsOfInterest").html("")
         for(var i=0;i<5;i++){
            var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
            var newDiv = $("<div>").addClass("points-of-int-divs")
            var img = $("<img>").attr("src",photoURL).addClass("points-of-int-photos")
            var title = $("<p>").text(response.results[i].name).addClass("points-of-int-name")
-           var rating = $("<p>").text("Rating: "+response.results[i].rating+" Number of ratings: "+response.results[i].user_ratings_total).addClass("points-of-int-rating")
-           var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("points-of-int-area")
+           var rating = $("<p>").html("Rating: "+response.results[i].rating + "&#11088; Number of ratings: "+response.results[i].user_ratings_total).addClass("points-of-int-rating")
+           var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("points-of-int-area").css({"border-bottom" : "2px solid #fc6020"})
            
-           newDiv.append(img,title,rating,area)
+           newDiv.append(title,img,rating,area)
            $("#pointsOfInterest").append(newDiv)
 }})})
-      
-
-        
-

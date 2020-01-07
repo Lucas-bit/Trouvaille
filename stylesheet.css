@@ -239,22 +239,62 @@ body {
 
 /* ----------------Resturant----------------------*/
 
-#restaurant, #pointsOfInterest{
-    overflow: auto;
-    height: 500px;
-    margin-left: 8%;
-    margin-top: 20px;
-  }
-  .restaurant-photos, .points-of-int-photos{
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px black;
-  margin-bottom: 20px;
+.results-div {
+    width: 90%
   }
   
-  #pointsOfInterest {
-      margin-right: 20px;
-  }
+  .resturant-title{
+      margin-left: 15px;
+    }
   
+  #restaurant, #pointsOfInterest{
+      overflow: auto;
+      height: 500px;
+      margin-left: 11%;
+      border-radius: 15px;
+      
+  
+    }
+    .restaurant-photos, .points-of-int-photos{
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    margin-bottom: 20px;
+    }
+    
+    #pointsOfInterest {
+        margin-right: 5.75%;
+    }
+     #pointsOfInterestTitle {
+       margin-left: 6%;
+       margin-top: 40px;
+     }
+
+    #restaurant-title {
+      margin-left:9%;
+      margin-top: 40px
+    }
+
+    .title-row {
+        width: 90%
+    }
+
+    .restaurant-name {
+        margin-top: 20px;
+      }
+  
+      .points-of-int-name {
+        margin-top: 20px;
+      }
+
+      .points-of-int-area {
+        padding-bottom: 20px;
+       
+      }
+
+      .restaurant-area{ 
+      padding-bottom: 20px;
+      }
+
    /*---------------------preloader--------------------------*/
 
    .loader_bg {
@@ -326,4 +366,5 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background:  #fc6020; 
   }
+
   
