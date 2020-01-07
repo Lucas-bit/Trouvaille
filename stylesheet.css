@@ -378,7 +378,9 @@ body {
     padding-right:0px;
 }
 #mapimg{
-  padding-left: 25%;
-  
+    margin-top: 20px;
+    margin-left: 27%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
 }
   
