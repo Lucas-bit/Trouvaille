@@ -305,6 +305,7 @@ $(document).ready(function() {
 //get restaurants and tourist attractions
 
 $("#button").on("click", function() {
+  $("#map").empty()
   var googleKey = "AIzaSyA2-3Fi1nZ7Ep570B8W28x4lmGxY5UqRlc"
   var selectedCity = $("#cities").val()
     for(var i=0;i<cities.length;i++){
