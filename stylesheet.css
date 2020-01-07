@@ -294,7 +294,7 @@ body {
       .restaurant-area{ 
       padding-bottom: 20px;
       }
-      
+
    /*---------------------preloader--------------------------*/
 
    .loader_bg {
@@ -366,3 +366,5 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background:  #fc6020; 
   }
+
+  

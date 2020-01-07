@@ -316,12 +316,13 @@ $("#button").on("click", function() {
   }).then(function(response) {
       $("#restaurant-title").html("<h4 class=\"resturant-title\">Restaurants: " ,"</h4>")
       $("#restaurant").css({"background-color":"#b2d8d8"}).css({"box-shadow": "5px 5px 5px black"})
+      $("#restaurant").html("")
         for(var i=0;i<5;i++) {
           var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
           var newDiv = $("<div>").addClass("restaurant-divs")
           var img = $("<img>").attr("src",photoURL).addClass("restaurant-photos")
           var title = $("<p>").text(response.results[i].name).addClass("restaurant-name")
-          var rating = $("<p>").text("Rating: "+response.results[i].rating+" Number of ratings: "+response.results[i].user_ratings_total).addClass("restaurant-rating")
+          var rating = $("<p>").text("Rating: "+response.results[i].rating+  " Number of ratings: "+response.results[i].user_ratings_total).addClass("restaurant-rating")
           var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("restaurant-area").css({"border-bottom" : "2px solid #fc6020"})
           newDiv.append(title,img,rating,area)
           $("#restaurant").append(newDiv)
@@ -334,12 +335,13 @@ $("#button").on("click", function() {
   }).then(function(response){
       $("#pointsOfInterestTitle").html("<h4 class=\"points-of-int\">Points of Interest: " ,"</h4>")
       $("#pointsOfInterest").css({"background-color":"#b2d8d8"}).css({"box-shadow": "5px 5px 5px black"})
+      $("#pointsOfInterest").html("")
         for(var i=0;i<5;i++){
            var photoURL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+response.results[i].photos[0].photo_reference+"&key="+googleKey
            var newDiv = $("<div>").addClass("points-of-int-divs")
            var img = $("<img>").attr("src",photoURL).addClass("points-of-int-photos")
            var title = $("<p>").text(response.results[i].name).addClass("points-of-int-name")
-           var rating = $("<p>").text("Rating: "+response.results[i].rating + " Number of ratings: "+response.results[i].user_ratings_total).addClass("points-of-int-rating")
+           var rating = $("<p>").html("Rating: "+response.results[i].rating + "&#9824; Number of ratings: "+response.results[i].user_ratings_total).addClass("points-of-int-rating")
            var area = $("<p>").text("Area: "+response.results[i].vicinity).addClass("points-of-int-area").css({"border-bottom" : "2px solid #fc6020"})
            
            newDiv.append(title,img,rating,area)
