@@ -69,11 +69,15 @@ var countriesInterval = setInterval(function() {
                           var city = $("<option>").text(cities[i].name)
                           $("#cities").append(city)
                           clearInterval(countriesInterval)
-                  }} else {
+                  }} else if (minPop === 5000) {
+                      var noCities = $("<option>").text("No cities available yet!")
+                      $("#cities").append(noCities)
+                      clearInterval(countriesInterval)
+                  } else {
                     minPop-=86250
                     settings.url = "https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=10&countryIds="+selectedCountry+"&minPopulation="+minPop+"&types=city"
                   }
-                })},1000)
+                })},1150)
       
                 
     })
@@ -346,4 +350,7 @@ $("#button").on("click", function() {
            
            newDiv.append(title,img,rating,area)
            $("#pointsOfInterest").append(newDiv)
+          
+          var map = $("<img>").attr("src", "https://maps.googleapis.com/maps/api/staticmap?size=900x400&zoom=13&maptype=hybrid&center="+lat+","+lon+"&key="+googleKey).attr("id","mapimg")
+        $("#map").append(map)
 }})})
