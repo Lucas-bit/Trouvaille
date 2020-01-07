@@ -367,4 +367,18 @@ body {
     background:  #fc6020; 
   }
 
+
+/* Map */
+#map {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 20px;
+    width: 90%;
+    padding-left: 0px;
+    padding-right:0px;
+}
+#mapimg{
+  padding-left: 25%;
+  
+}
   
