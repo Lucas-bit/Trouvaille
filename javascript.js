@@ -351,6 +351,8 @@ $("#button").on("click", function() {
            newDiv.append(title,img,rating,area)
            $("#pointsOfInterest").append(newDiv)
           
+          
+}
           var map = $("<img>").attr("src", "https://maps.googleapis.com/maps/api/staticmap?size=900x400&zoom=13&maptype=hybrid&center="+lat+","+lon+"&key="+googleKey).attr("id","mapimg")
-        $("#map").append(map)
-}})})
+            $("#map").append(map)
+      })})
