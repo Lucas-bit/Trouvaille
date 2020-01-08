@@ -214,7 +214,7 @@ $(document).ready(function() {
           var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + "%");
           var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " °F");
           var cardBody = $("<div>").addClass("card-body");
-          var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+          var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
   
           // merge and add to page
           title.append(img);
@@ -250,7 +250,7 @@ $(document).ready(function() {
   
               var title = $("<h5>").addClass("card-title").text(new Date(data.list[i].dt_txt).toLocaleDateString());
   
-              var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png");
+              var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png");
   
               var p1 = $("<p>").addClass("card-text").text("Temp: " + data.list[i].main.temp_max + " °F");
               var p2 = $("<p>").addClass("card-text").text("Humidity: " + data.list[i].main.humidity + "%");
