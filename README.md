@@ -16,6 +16,8 @@ Unzip the zip file and then open the file in your code editor of choice.
 
 
 Then open the index.html file in your default browser by right clicking on the index.html file and selecting 'Open in Default Broswer' as pictured below.
+
+
 ![](trouvaille-open-browser.png)
 
 
