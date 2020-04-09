@@ -1,6 +1,9 @@
 # Trouvaille
 Something lovely discovered by chance.
 
+![](Trouvaille-screenshot.png)
+
+# About
 A destination generator app for the traveler who knows they want to travel, but can't make up their mind on where to go. 
 With this application one is able to narrow their options down by selecting a region, which then gives the user a list of countries within that region and finally after selecting the country a list of popular cities. 
 
@@ -19,7 +22,6 @@ Then open the index.html file in your default browser by right clicking on the i
 
 
 ![](trouvaille-open-browser.png)
-
 
 
 # Built With
