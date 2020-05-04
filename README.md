@@ -1,7 +1,6 @@
 # Trouvaille
 Something lovely discovered by chance.
 
-![](Trouvaille-screenshot.png)
 
 # About
 A destination generator app for the traveler who knows they want to travel, but can't make up their mind on where to go. 
@@ -13,16 +12,10 @@ The user is then presented with up to 5 restuarants and 5 points of interest loc
 # Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes: Download a copy of the zip file from Github as pictured below. 
 
-![](trouvaille-zip-download-example.png)
-
 Unzip the zip file and then open the file in your code editor of choice.
 
 
 Then open the index.html file in your default browser by right clicking on the index.html file and selecting 'Open in Default Broswer' as pictured below.
-
-
-![](trouvaille-open-browser.png)
-
 
 # Built With
 VS Code
