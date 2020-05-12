@@ -36,6 +36,6 @@ Javascript, JQuery, Ajax, HTML5, CSS3
 
 Joseph Register josephregister1258@gmail.com -- https://github.com/jreg1258 -- https://jreg1258.github.io/ResponsivePortfolio/
 
-Lucas Gonzalez https://github.com/Lucas-bit
+Lucas Gonzalez lucasberatudgonzalez@gmail.com -- https://github.com/Lucas-bit -- https://lucas-bit.github.io/Nice-Portfolio/
 
 Khalid Muhammad https://github.com/KhalidM53
